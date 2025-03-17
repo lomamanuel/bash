@@ -1,0 +1,54 @@
+Gedit:
+	- Evidenziazione sintassi (sh)
+	- Tabulazione 4
+	- Visualizzazione numero riga
+	- Evidenziazione riga corrente e parentesi
+
+Comando per lanciare file: bash
+
+Inizio file .sh sempre con "#!/bin/bash" per far capire al calcolatore come interpretare il codice
+
+clear = pulisce la shell corrente (non la cronologia)
+
+Se nello script è presente un errore non salta l'intero script ma solo la riga interessata (tutto il resto viene eseguito correttamente)
+
+Variabili predefinite:
+	- $PWD -> dir corrente
+	- $HOME -> percorso home
+	- $USER -> nome user
+	- $RANDOM -> valore casuale
+	- $LANG -> lingua sistema
+	- $HOSTTYPE -> architettura sistema
+
+">" = scrive in un nuovo file o sovrascrive
+">>" = continua a scrivere sotto al file esistente
+read = mette in pausa lo script in attesa di un intervento
+
+Il comando pipe "|" trasforma l'output del primo comando nell'input del secondo
+Un'altra sintassi del pipe è "secondo comando <(primo comando)"
+Si possono accumulare diversi output come input del comando finale:
+	"comando finale <(comando) <(comando) <(comando) ..."
+	"comando | comando | comando | ... | comando finale"
+
+sort = ordina in ordine alfabetico (con -r lo fa in modo inverso)
+uniq = scarta i doppioni
+
+Ctrl+C = interruzione script
+
+man (comando) = mostra tutte le combinazioni del comando
+
+L'apice rovesciato (backquote "`") permette l'uso di un output come parametro di un altro comando
+Un'altra sintassi del backquote è $() grazie al quale si possono concatenare più comandi:
+	"comando finale $(comando $(comando))"
+
+-e = permette al comando echo di interpretare i caratteri speciali come \r\n (a capo)
+* = trova tutti gli elementi che corrispondono alla parte di nome indicata
+	*.txt	->	tutti i file che terminano con .txt
+	name*	->	tutti i file che iniziano con name
+	name*.txt	->	tutti i file che iniziano con name e finiscono con .txt
+	*	->	tutti i file presenti nella directory in cui siamo posizionati
+
+\ = il carattere che segue non verrà interpretato dal comando (si usa per le stringhe)
+	es: Corso\ Bash -> "Corso Bash" (lo spazio non viene interpretato come una separazione di 2 elementi perché fa parte di una stringa)
+
+{} = espandono una tupla o una sequenza
