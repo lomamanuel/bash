@@ -2,7 +2,6 @@
 
 clear
 
-:<<visto
 #riga commento
 
 :<< blocco_commento
@@ -80,8 +79,6 @@ read
 
 echo -e "il contenuto del file è:\r\n$(cat $(ls *.txt))" #con $() si possono concatenare più comandi
 #il comando stampa a video il contenuto di tutti i file che terminano con .txt
-
-visto
 
 #"\" fa in modo che il carattere successivo non venga interpretato
 echo Pippo =\> $(ls) #">" non viene interpretato come un comando, ma come parte della stringa
